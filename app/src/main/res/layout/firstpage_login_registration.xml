@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="384dp"
         android:contentDescription="@string/image_name_0"
@@ -17,28 +17,34 @@
 
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editText_email_firstpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/edittext_0"
-        android:textSize="20dp"
-        android:backgroundTintMode="src_over"
         android:layout_margin="5dp"
+        android:autofillHints=""
+        android:background="@drawable/edittext_0"
+        android:backgroundTintMode="src_over"
         android:ems="13"
+        android:hint="@string/editText_hint_0"
         android:inputType="textEmailAddress"
-        android:text="Email" />
+        android:labelFor="@id/textView_LabelFor_firstpage"
+        android:text="@string/editText_email_0"
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editText_pass_firstpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="20dp"
+        android:autofillHints=""
         android:background="@drawable/edittext_0"
         android:ems="13"
+        android:hint="@string/editText_hint_1"
         android:inputType="textPassword"
-        android:text="Password" />
+        android:labelFor="@id/textView_LabelFor_firstpage"
+        android:text="@string/editText_pass_1"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -49,29 +55,37 @@
         >
 
         <Button
-            android:id="@+id/firstpage_log_but"
+            android:id="@+id/button_login_firstpage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_0"
             android:layout_marginEnd="15dp"
-            android:text="@string/but_log_0" />
+            android:background="@drawable/button_0"
+            android:text="@string/but_log_0"
+            style="@style/Widget.AppCompat.Button.Colored"
+            />
 
         <Button
-            android:id="@+id/firstpage_reg_but"
+            android:id="@+id/button_singUp_firstpage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_0"
-            android:onClick="onClink"
-            android:text="@string/but_reg_0" />
+            android:onClick="onClick"
+            android:text="@string/but_reg_0"
+            style="@style/Widget.AppCompat.Button.Colored"
+            />
 
     </LinearLayout>
 
 
+    <TextView
+        android:id="@+id/textView_LabelFor_firstpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_help_firstpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text=".?." />
+        android:text="@string/first_page_button_0" />
 
 </LinearLayout>
