@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    // Other
     <string name="but_log_0">Log in</string>
     <string name="but_reg_0">Sing up</string>
     <string name="image_name_0">Image program description.</string>
+    <string name="editText_email_0">Email</string>
+    <string name="editText_pass_1">Password</string>
+    <string name="editText_hint_0">Email</string>
+    <string name="editText_hint_1">Password</string>
+
+
+    // first page login,registration
+    <string name="first_page_button_0">Help</string>
+
+    // reg
+    <string name="registration_button_0">Back</string>
+
+
 
 
 </resources>

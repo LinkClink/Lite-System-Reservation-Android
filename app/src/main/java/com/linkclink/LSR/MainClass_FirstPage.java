@@ -20,9 +20,9 @@ public class MainClass_FirstPage extends AppCompatActivity
         setContentView(R.layout.firstpage_login_registration);
     }
 
-    public void onClink(View view)
+    public void onClick(View view)
     {
-        registration_button  = (Button) findViewById(R.id.firstpage_reg_but);
+        registration_button  = (Button) findViewById(R.id.button_singUp_firstpage);
         if(view == registration_button) Registration();
     }
 
