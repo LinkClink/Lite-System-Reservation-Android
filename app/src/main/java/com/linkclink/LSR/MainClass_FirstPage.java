@@ -16,6 +16,7 @@ public class MainClass_FirstPage extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstpage_login_registration);
     }
