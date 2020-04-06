@@ -8,11 +8,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class MainClass_FirstPage extends AppCompatActivity
 {
     Button registration_button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
