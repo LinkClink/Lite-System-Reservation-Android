@@ -17,8 +17,8 @@ public class RegistrationPageActivity extends AppCompatActivity
 
     TextView errorLog;
 
-    String errorText = "";
-    boolean boolean_1;
+    String errorText = null;
+    boolean boolean_1 = Boolean.parseBoolean(null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,7 +29,7 @@ public class RegistrationPageActivity extends AppCompatActivity
     }
     public void PreviousLayout(View view)
     {
-        Intent intent_reg = new Intent(RegistrationPageActivity.this, MainClass_FirstPage.class);
+        Intent intent_reg = new Intent(RegistrationPageActivity.this, MainClassFirstPage.class);
         startActivityForResult(intent_reg,1);
         overridePendingTransition(R.anim.layout_back,R.anim.layout_back);
     }
@@ -69,15 +69,11 @@ public class RegistrationPageActivity extends AppCompatActivity
     }
     private static boolean CheckPasswordDataCyrillic(String data)
     {
-        data = data.replaceAll("[A-Za-z0-9^\\S]", "");
+        data = data.replaceAll("[A-Za-z0-9^\\S]", ""); /* (a-z) (0-9) (A-Z) (symbols) */
         System.out.println(data);
         return data.equals("");
     }
-
-
-
-
-
+    
     private static void DataBaseSqlDataCheck()
     {
 

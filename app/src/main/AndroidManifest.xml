@@ -16,7 +16,7 @@
         </activity>
 
         <activity
-            android:name=".MainClass_FirstPage"
+            android:name=".MainClassFirstPage"
             android:theme="@style/SplashTheme"
             android:screenOrientation="fullSensor">
             <intent-filter>
