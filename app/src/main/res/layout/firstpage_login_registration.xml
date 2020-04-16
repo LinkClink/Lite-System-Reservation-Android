@@ -19,9 +19,9 @@
     <EditText
         android:id="@+id/editText_email_firstpage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
+        android:layout_margin="7dp"
         android:autofillHints=""
         android:background="@drawable/edittext_0"
         android:backgroundTintMode="src_over"
@@ -34,7 +34,7 @@
     <EditText
         android:id="@+id/editText_pass_firstpage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:autofillHints=""
         android:background="@drawable/edittext_0"
