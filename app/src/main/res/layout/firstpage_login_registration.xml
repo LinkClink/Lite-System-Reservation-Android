@@ -26,9 +26,12 @@
         android:background="@drawable/edittext_0"
         android:backgroundTintMode="src_over"
         android:ems="13"
+        android:fontFamily="casual"
         android:hint="@string/editText_hint_0"
         android:inputType="textEmailAddress"
         android:labelFor="@id/textView_LabelFor_firstpage"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:textSize="20sp" />
 
     <EditText
@@ -39,9 +42,12 @@
         android:autofillHints=""
         android:background="@drawable/edittext_0"
         android:ems="13"
+        android:fontFamily="casual"
         android:hint="@string/editText_hint_1"
         android:inputType="textPassword"
         android:labelFor="@id/textView_LabelFor_firstpage"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:textSize="20sp" />
 
     <LinearLayout
