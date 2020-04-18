@@ -31,7 +31,7 @@ public class RegistrationPageActivity extends AppCompatActivity
     {
         Intent intent_reg = new Intent(RegistrationPageActivity.this, MainClassFirstPage.class);
         startActivityForResult(intent_reg,1);
-        overridePendingTransition(R.anim.layout_back,R.anim.layout_back);
+        overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
     public void RegisterDataCheck(View view)
     {

@@ -23,6 +23,6 @@ public class MainClassFirstPage extends AppCompatActivity
     {
         Intent intent_reg = new Intent(MainClassFirstPage.this, RegistrationPageActivity.class);
         startActivityForResult(intent_reg,1);
-        overridePendingTransition(R.anim.layout_next,R.anim.layout_next);
+        overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
 }

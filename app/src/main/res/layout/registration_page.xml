@@ -78,12 +78,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
             android:background="@drawable/button_0"
+            android:fontFamily="casual"
             android:onClick="PreviousLayout"
             android:text="@string/registration_button_0" />
 
         <Button
             android:id="@+id/button_singUp_registration"
             style="@style/Widget.AppCompat.Button.Colored"
+            android:fontFamily="casual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_0"
