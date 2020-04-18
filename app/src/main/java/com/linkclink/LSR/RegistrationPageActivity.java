@@ -15,6 +15,10 @@ public class RegistrationPageActivity extends AppCompatActivity
     EditText passwordEditText1;
     EditText loginEditText0;
 
+    String dataPassword0;
+    String dataPassword1;
+    String dataLogin;
+
     TextView errorLog;
 
     String errorText = null;
@@ -40,6 +44,11 @@ public class RegistrationPageActivity extends AppCompatActivity
         passwordEditText0 = (EditText) findViewById(R.id.editText_pass1_registration);
         passwordEditText1 = (EditText) findViewById(R.id.editText_pass2_registration);
         errorLog = (TextView) findViewById(R.id.textView_error);
+
+        dataLogin = loginEditText0.getText().toString();
+        dataPassword0 = passwordEditText0.getText().toString();
+        dataPassword1 = passwordEditText1.getText().toString();
+
         /* Login charters check */
         LoginChartersCheck();
        /* Password charters check */
@@ -51,14 +60,14 @@ public class RegistrationPageActivity extends AppCompatActivity
     public void LoginChartersCheck()
     {
         boolean_1 = CheckLoginDataCyrillic(loginEditText0.getText().toString());
-        if(loginEditText0.getText().toString().length() < 6 || loginEditText0.getText().toString().length() > 15) errorText += "Login is to small or long\n"; /* Check login length */
+        if((dataLogin.length() < 6 || dataLogin.length() > 15) && dataLogin.length() != 0) errorText += "Login is to small or long\n"; /* Check login length */
         if (!boolean_1) errorText += "Incorrect login charters only:[0-9,a-z,A-Z]\n"; /* Check incorrect Symbols */
     }
     public void PasswordChartersCheck()
     {
         boolean_1 = CheckPasswordDataCyrillic(passwordEditText0.getText().toString());
-        if(!passwordEditText0.getText().toString().equals(passwordEditText1.getText().toString())) errorText += "Password mismatch\n"; /* Second password is incorrect */
-        if(passwordEditText0.getText().toString().length() < 4 || passwordEditText0.getText().toString().length() > 20) errorText += "Password is to small or long\n"; /* Check password length */
+        if(!dataPassword0.equals(dataPassword1)) errorText += "Password mismatch\n"; /* Second password is incorrect */
+        if((dataPassword0.length() < 4 || dataPassword0.length() > 20) && dataPassword0.length() != 0) errorText += "Password is to small or long\n"; /* Check password length */
         if(!boolean_1) errorText += "Incorrect password charters only:[0-9,a-z,A-Z]\n";
     }
     private static boolean CheckLoginDataCyrillic(String data)
