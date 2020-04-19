@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     >
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/but_reg_0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_margin="20dp"
-        app:srcCompat="@drawable/lsr_name_1"
-        android:contentDescription="@string/image_name_0" />
-
+        android:contentDescription="@string/image_name_0"
+        app:srcCompat="@drawable/splash_screenlogo"
+        />
     <EditText
         android:id="@+id/editText_login_registration"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_margin="7dp"
+        android:layout_margin="5dp"
         android:autofillHints="no"
         android:background="@drawable/selector_edittext_0"
         android:ems="13"
@@ -30,14 +39,13 @@
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        />
     <EditText
         android:id="@+id/editText_pass1_registration"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_margin="7dp"
         android:autofillHints="no"
         android:background="@drawable/selector_edittext_0"
         android:ems="13"
@@ -46,8 +54,8 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        />
     <EditText
         android:id="@+id/editText_pass2_registration"
         android:layout_width="wrap_content"
@@ -62,15 +70,14 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
         >
-
         <Button
             android:id="@+id/button_back_registration"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -80,8 +87,8 @@
             android:background="@drawable/button_0"
             android:fontFamily="casual"
             android:onClick="PreviousLayout"
-            android:text="@string/registration_button_0" />
-
+            android:text="@string/registration_button_0"
+            />
         <Button
             android:id="@+id/button_singUp_registration"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -90,14 +97,13 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_0"
             android:onClick="RegisterDataCheck"
-            android:text="@string/but_reg_0" />
-
+            android:text="@string/but_reg_0"
+            />
     </LinearLayout>
-
     <TextView
         android:id="@+id/textView_error"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
+        android:layout_height="wrap_content"
+        />
+<include layout="@layout/test"></include>
 </LinearLayout>
