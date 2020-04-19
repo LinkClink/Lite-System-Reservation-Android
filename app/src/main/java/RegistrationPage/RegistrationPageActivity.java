@@ -1,4 +1,4 @@
-package com.linkclink.LSR;
+package RegistrationPage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,17 +7,21 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.linkclink.LSR.MainClassFirstPage;
+import com.linkclink.LSR.R;
+
 import androidx.appcompat.app.AppCompatActivity;
+import logic.ShowToast;
 
 public class RegistrationPageActivity extends AppCompatActivity
 {
-    EditText passwordEditText0;
-    EditText passwordEditText1;
-    EditText loginEditText0;
+    protected EditText passwordEditText0;
+    protected EditText passwordEditText1;
+    protected EditText loginEditText0;
 
-    String dataPassword0;
-    String dataPassword1;
-    String dataLogin;
+    protected String dataPassword0;
+    protected String dataPassword1;
+    protected String dataLogin;
 
     TextView errorLog;
 
@@ -31,12 +35,14 @@ public class RegistrationPageActivity extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.registration_page);
     }
+    /* Button onclick change layout */
     public void PreviousLayout(View view)
     {
         Intent intent_reg = new Intent(RegistrationPageActivity.this, MainClassFirstPage.class);
         startActivityForResult(intent_reg,1);
         overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
+    /* Main */
     public void RegisterDataCheck(View view)
     {
         errorText = "";
@@ -49,47 +55,52 @@ public class RegistrationPageActivity extends AppCompatActivity
         dataPassword0 = passwordEditText0.getText().toString();
         dataPassword1 = passwordEditText1.getText().toString();
 
+
         /* Login charters check */
         LoginChartersCheck();
-       /* Password charters check */
+        /* Password charters check */
         PasswordChartersCheck();
         // Check
         errorLog.setText(errorText);
+        ShowToast.showToast(getApplicationContext(),errorText);
     }
 
-    public void LoginChartersCheck()
+    /* Check (login-data) charters */
+    protected void LoginChartersCheck()
     {
-        boolean_1 = CheckLoginDataCyrillic(loginEditText0.getText().toString());
+        boolean_1 = CheckLoginDataCyrillic(dataLogin);
         if((dataLogin.length() < 6 || dataLogin.length() > 15) && dataLogin.length() != 0) errorText += "Login is to small or long\n"; /* Check login length */
         if (!boolean_1) errorText += "Incorrect login charters only:[0-9,a-z,A-Z]\n"; /* Check incorrect Symbols */
     }
-    public void PasswordChartersCheck()
+
+    /* Check (password-data) charters */
+    protected void PasswordChartersCheck()
     {
-        boolean_1 = CheckPasswordDataCyrillic(passwordEditText0.getText().toString());
+        boolean_1 = CheckPasswordDataCyrillic(dataPassword0);
         if(!dataPassword0.equals(dataPassword1)) errorText += "Password mismatch\n"; /* Second password is incorrect */
         if((dataPassword0.length() < 4 || dataPassword0.length() > 20) && dataPassword0.length() != 0) errorText += "Password is to small or long\n"; /* Check password length */
         if(!boolean_1) errorText += "Incorrect password charters only:[0-9,a-z,A-Z]\n";
     }
-    private static boolean CheckLoginDataCyrillic(String data)
+
+    /* Check (a-z) (0-9) (A-Z) */
+    protected boolean CheckLoginDataCyrillic(String data)
     {
         data = data.replaceAll("[A-Za-z0-9]", "");
-        System.out.println(data);
         return data.equals("");
     }
-    private static boolean CheckPasswordDataCyrillic(String data)
+
+    /* Check (a-z) (0-9) (A-Z) */
+    protected boolean CheckPasswordDataCyrillic(String data)
     {
-        data = data.replaceAll("[A-Za-z0-9^\\S]", ""); /* (a-z) (0-9) (A-Z) (symbols) */
-        System.out.println(data);
+        data = data.replaceAll("[A-Za-z0-9^\\S]", "");
         return data.equals("");
     }
-    
+
+
+
+
+
     private static void DataBaseSqlDataCheck()
-    {
-
-    }
-
-
-
-
+    { }
 
 }
