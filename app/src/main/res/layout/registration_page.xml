@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
         android:gravity="center"
+        android:layout_gravity="center"
         android:text="@string/but_reg_0"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_textview_0"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -37,8 +53,6 @@
         android:fontFamily="casual"
         android:hint="@string/editText_hint_0"
         android:inputType="textEmailAddress"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:textSize="20sp"
         />
     <EditText
@@ -52,8 +66,6 @@
         android:fontFamily="casual"
         android:hint="@string/editText_hint_1"
         android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:textSize="20sp"
         />
     <EditText
@@ -68,8 +80,6 @@
         android:fontFamily="casual"
         android:hint="@string/editText_hint_1"
         android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:textSize="20sp"
         />
     <LinearLayout
@@ -80,22 +90,22 @@
         >
         <Button
             android:id="@+id/button_back_registration"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
-            android:background="@drawable/button_0"
+            android:background="@drawable/selector_button_0"
             android:fontFamily="casual"
             android:onClick="PreviousLayout"
             android:text="@string/registration_button_0"
             />
         <Button
             android:id="@+id/button_singUp_registration"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.AppCompat.Button"
             android:fontFamily="casual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_0"
+            android:background="@drawable/selector_button_0"
             android:onClick="RegisterDataCheck"
             android:text="@string/but_reg_0"
             />
@@ -105,5 +115,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+    </LinearLayout>
+    </LinearLayout>
+
 <include layout="@layout/test"></include>
-</LinearLayout>
+</RelativeLayout>
