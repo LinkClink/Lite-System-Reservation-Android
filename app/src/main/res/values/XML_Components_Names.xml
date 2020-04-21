@@ -17,6 +17,10 @@
     // reg
     <string name="registration_button_0">Back</string>
 
+    // bottom buttons toolbar
+    <string name="textview_help">Help</string>
+    <string name="textview_site">Site</string>
+    <string name="textview_credits">Credits</string>
 
 
 

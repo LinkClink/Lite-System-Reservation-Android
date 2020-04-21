@@ -10,15 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".RegistrationPageActivity"
+            android:name="RegistrationPage.RegistrationPageActivity"
             android:screenOrientation="nosensor"
             >
         </activity>
 
         <activity
-            android:name=".MainClass_FirstPage"
+            android:name=".MainClassFirstPage"
             android:theme="@style/SplashTheme"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="nosensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 
+import RegistrationPage.RegistrationPageActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainClass_FirstPage extends AppCompatActivity
+public class MainClassFirstPage extends AppCompatActivity
 {
-    Button registration_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,17 +20,10 @@ public class MainClass_FirstPage extends AppCompatActivity
         setContentView(R.layout.firstpage_login_registration);
     }
 
-    public void onClick(View view)
+    public void RegistrationLayout(View view)
     {
-        registration_button  = (Button) findViewById(R.id.button_singUp_firstpage);
-        if(view == registration_button) Registration();
-    }
-
-    public void Registration()
-    {
-        Intent intent_reg = new Intent(MainClass_FirstPage.this, RegistrationPageActivity.class);
+        Intent intent_reg = new Intent(MainClassFirstPage.this, RegistrationPageActivity.class);
         startActivityForResult(intent_reg,1);
-        overridePendingTransition(R.anim.layout_next,R.anim.layout_next);
+        overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
-
 }
