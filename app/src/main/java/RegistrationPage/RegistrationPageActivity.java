@@ -75,5 +75,11 @@ public class RegistrationPageActivity extends AppCompatActivity
         DataBaseCheck.DataBaseSqlDataCheck(getApplicationContext());
         // Show errors (beta)
         ResetErrorLog();
+
+        // Test
+        AddNewUser addNewUser = new AddNewUser();
+        addNewUser.RegisterNewUser(getApplicationContext());
+
+
     }
 }
