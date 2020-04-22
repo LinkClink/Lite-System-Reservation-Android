@@ -1,22 +1,21 @@
 package RegistrationPage;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.linkclink.LSR.MainClassFirstPage;
 import com.linkclink.LSR.R;
 
 import androidx.appcompat.app.AppCompatActivity;
-import logic.ShowToast;
 
 public class RegistrationPageActivity extends AppCompatActivity
 {
+    private TextView errorLogEditText;
+    
     static EditText passwordEditText0;
     static EditText passwordEditText1;
     static EditText loginEditText0;
@@ -25,10 +24,9 @@ public class RegistrationPageActivity extends AppCompatActivity
     static String dataPassword1;
     static String dataLogin;
 
-    TextView errorLogEditText;
+    static String dataErrorText = "";
 
-    static String dataErrorText = null;
-    boolean boolean_1 = Boolean.parseBoolean(null);
+    boolean boolean0 = Boolean.parseBoolean(null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,12 +42,9 @@ public class RegistrationPageActivity extends AppCompatActivity
         startActivityForResult(intent_reg,1);
         overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
-    /* Main */
-    public void RegisterDataCheck(View view)
+    /* Component Initialisation */
+    protected void InitialisationLayoutComponents()
     {
-        DataChartersUserCheck DataCheck = new DataChartersUserCheck();
-        dataErrorText = "";
-
         loginEditText0 = (EditText) findViewById(R.id.editText_login_registration);
         passwordEditText0 = (EditText) findViewById(R.id.editText_pass1_registration);
         passwordEditText1 = (EditText) findViewById(R.id.editText_pass2_registration);
@@ -58,17 +53,27 @@ public class RegistrationPageActivity extends AppCompatActivity
         dataLogin = loginEditText0.getText().toString();
         dataPassword0 = passwordEditText0.getText().toString();
         dataPassword1 = passwordEditText1.getText().toString();
+    }
+    /* Set data error */
+    protected void ResetErrorLog()
+    {
+        errorLogEditText.setText(dataErrorText);
+        dataErrorText = "";
+    }
+    /* Main */
+    public void RegisterDataCheck(View view)
+    {
+        DataChartersUserCheck DataCheck = new DataChartersUserCheck();
+        sqlDataUserCheck DataBaseCheck = new sqlDataUserCheck();
 
+        InitialisationLayoutComponents();
         /* Login charters check */
         DataCheck.LoginChartersCheck();
         /* Password charters check */
         DataCheck.PasswordChartersCheck();
-        // Check
-        errorLogEditText.setText(dataErrorText);
-        ShowToast.showToast(getApplicationContext(),dataErrorText);
+        /* Login sql-data check */
+        DataBaseCheck.DataBaseSqlDataCheck(getApplicationContext());
+        // Show errors (beta)
+        ResetErrorLog();
     }
-
-
-    private static void DataBaseSqlDataCheck()
-    { }
 }
