@@ -39,7 +39,7 @@
             app:srcCompat="@drawable/splash_screenlogo"
             />
         <EditText
-            android:id="@+id/editText_email_firstpage"
+            android:id="@+id/editText_login_firstpage"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -95,7 +95,6 @@
                 android:text="@string/but_reg_0"
                 />
         </LinearLayout>
-
         <TextView
             android:id="@+id/textView_LabelFor_firstpage"
             android:layout_width="match_parent"
@@ -103,5 +102,5 @@
             />
     </LinearLayout>
     </LinearLayout>
-<include layout="@layout/test"/>
+<include layout="@layout/bottom_help_fragment"/>
 </RelativeLayout>

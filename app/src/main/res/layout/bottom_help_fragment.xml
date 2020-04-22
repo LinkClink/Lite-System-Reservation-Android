@@ -3,55 +3,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    >
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
+        android:layout_weight="1"
+        >
         <TextView
             android:id="@+id/textView_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:gravity="center"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="casual"
             android:freezesText="false"
+            android:gravity="center"
             android:text="@string/textview_help"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="18sp" />
-
+            android:textSize="17sp"
+            />
         <TextView
             android:id="@+id/textView_Credit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:gravity="center"
             android:layout_weight="1"
             android:clickable="true"
             android:ellipsize="none"
             android:focusable="true"
             android:fontFamily="casual"
+            android:gravity="center"
             android:text="@string/textview_credits"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="18sp" />
+            android:textSize="17sp"
+            />
 
         <TextView
             android:id="@+id/textView_Site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:gravity="center"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="casual"
+            android:gravity="center"
+            android:linksClickable="true"
             android:text="@string/textview_site"
+            android:autoLink="web"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="18sp" />
+            android:textSize="17sp"
+            />
     </TableRow>
 </LinearLayout>

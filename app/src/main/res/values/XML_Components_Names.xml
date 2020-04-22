@@ -10,7 +10,6 @@
     <string name="editText_hint_0">Login</string>
     <string name="editText_hint_1">Password</string>
 
-
     // first page login,registration
     <string name="first_page_button_0">Help</string>
 
@@ -21,8 +20,6 @@
     <string name="textview_help">Help</string>
     <string name="textview_site">Site</string>
     <string name="textview_credits">Credits</string>
-
-
 
 </resources>
 
