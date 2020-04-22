@@ -52,7 +52,7 @@ public class sqlDataUserCheck extends RegistrationPageActivity
     }
 
     /* Local db connect */
-    protected void ConnectToDataBase()
+    private void ConnectToDataBase()
     {
         // For DataBase connect
         dataBaseHelper = new sqlDataBaseConnect(context);
@@ -61,7 +61,7 @@ public class sqlDataUserCheck extends RegistrationPageActivity
         catch (IOException mIOException)
         { ShowToast.showToast(getApplicationContext(),"Unable to update database: error 01"); }
         try
-        { database = dataBaseHelper.getWritableDatabase(); }
+        { database = dataBaseHelper.getReadableDatabase(); }
         catch (SQLException mSQLException)
         { ShowToast.showToast(getApplicationContext(),"Unable to write database: error 02"); }
     }
