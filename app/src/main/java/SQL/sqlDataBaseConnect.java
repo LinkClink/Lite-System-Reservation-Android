@@ -15,11 +15,11 @@ import java.io.OutputStream;
 public class sqlDataBaseConnect extends SQLiteOpenHelper
 {
     // Name of DataBase for Items
-    private static String DB_NAME = "dataBaseUsers.db";
+    private static String DB_NAME = "Users.db";
     private static String DB_PATH = "";
 
     // Versions DB (first ver 1)
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 3;
 
     private SQLiteDatabase mDataBase;
     private final Context mContext;
@@ -28,36 +28,26 @@ public class sqlDataBaseConnect extends SQLiteOpenHelper
     public sqlDataBaseConnect(Context context)
     {
         super(context, DB_NAME, null, DB_VERSION);
-
-        if (android.os.Build.VERSION.SDK_INT >= 17)
-            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        else
-            DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+        DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         this.mContext = context;
-
         copyDataBase();
         this.getReadableDatabase();
     }
-
     public void updateDataBase() throws IOException
     {
         if (mNeedUpdate)
         {
             File dbFile = new File(DB_PATH + DB_NAME);
-
             if (dbFile.exists()) dbFile.delete();
-
             copyDataBase();
             mNeedUpdate = false;
         }
     }
-
     private boolean checkDataBase()
     {
         File dbFile = new File(DB_PATH + DB_NAME);
         return dbFile.exists();
     }
-
     private void copyDataBase()
     {
         if (!checkDataBase())
@@ -65,16 +55,11 @@ public class sqlDataBaseConnect extends SQLiteOpenHelper
             this.getReadableDatabase();
             this.close();
             try
-            {
-                copyDBFile();
-            }
+            { copyDBFile(); }
             catch (IOException mIOException)
-            {
-                throw new Error("ErrorCopyingDataBase");
-            }
+            { throw new Error("ErrorCopyingDataBase"); }
         }
     }
-
     private void copyDBFile() throws IOException
     {
         InputStream mInput = mContext.getAssets().open(DB_NAME);
@@ -87,13 +72,11 @@ public class sqlDataBaseConnect extends SQLiteOpenHelper
         mOutput.close();
         mInput.close();
     }
-
     public boolean openDataBase() throws SQLException
     {
         mDataBase = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
         return mDataBase != null;
     }
-
     @Override
     public synchronized void close()
     {
@@ -101,14 +84,10 @@ public class sqlDataBaseConnect extends SQLiteOpenHelper
             mDataBase.close();
         super.close();
     }
-
     @Override
     public void onCreate(SQLiteDatabase db)
-    {
+    { }
 
-    }
-
-    /* */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
