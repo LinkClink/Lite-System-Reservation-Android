@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainClassFirstPage extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -19,7 +18,6 @@ public class MainClassFirstPage extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstpage_login_registration);
     }
-
     public void RegistrationLayout(View view)
     {
         Intent intent_reg = new Intent(MainClassFirstPage.this, RegistrationPageActivity.class);
