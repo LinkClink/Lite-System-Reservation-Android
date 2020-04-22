@@ -36,8 +36,7 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:contentDescription="@string/image_name_0"
-            app:srcCompat="@drawable/splash_screenlogo"
-            />
+            app:srcCompat="@drawable/splash_screenlogo" />
         <EditText
             android:id="@+id/editText_login_firstpage"
             android:layout_width="wrap_content"
@@ -102,5 +101,5 @@
             />
     </LinearLayout>
     </LinearLayout>
-<include layout="@layout/bottom_help_fragment"/>
+<include layout="@layout/bottom_toolbar_component"/>
 </RelativeLayout>
