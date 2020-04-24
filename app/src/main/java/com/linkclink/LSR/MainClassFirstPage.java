@@ -16,7 +16,7 @@ public class MainClassFirstPage extends AppCompatActivity
         setTheme(R.style.AppTheme);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.firstpage_login_registration);
+        setContentView(R.layout.layout_firstpage_lr);
     }
     public void RegistrationLayout(View view)
     {
@@ -24,4 +24,13 @@ public class MainClassFirstPage extends AppCompatActivity
         startActivityForResult(intent_reg,1);
         overridePendingTransition(R.anim.layout_no_an,R.anim.layout_no_an);
     }
+
+    public void LogIn(View view)
+    {
+
+
+
+
+    }
+
 }
