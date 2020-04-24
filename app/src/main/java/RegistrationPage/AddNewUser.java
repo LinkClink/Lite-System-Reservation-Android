@@ -1,7 +1,6 @@
 package RegistrationPage;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -15,17 +14,18 @@ import logic.ShowToast;
 
 public class AddNewUser extends RegistrationPageActivity
 {
-    private String generatedUserId = "";
-
     private Random randomNumber = new Random();
-
     private Date currentTime = new Date();
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yy"); /* Year day mouth */
+    private SimpleDateFormat simpleDateFormat0 = new SimpleDateFormat("MM-dd-yyyy"); /* Year day mouth */
 
-    ShowToast showToast = new ShowToast();
+    private ShowToast showToast = new ShowToast();
 
+    private String generatedUserId = "";
     private String[] dataNumberAfterSplit = new String[2];
     private String dataNumberToSplit = null;
+    private String table_name = "UserData";
+    private String dataCurrentTime = null;
 
     private sqlDataBaseConnect dataBaseHelper;
     private SQLiteDatabase database;
@@ -41,16 +41,16 @@ public class AddNewUser extends RegistrationPageActivity
         ConnectToDataBase();
         /* Generate user id function */
         GenerateUserId();
+        /* Add new user to db */
+        AddNewUserToDataBase();
     }
     /* Generate user id */
-    protected void GenerateUserId()
+    private void GenerateUserId()
     {
         /* Generated first random numbers (2) */
         generatedUserId  += String.valueOf(randomNumber.nextInt(90)+10); /* 10-99 */
-
         dataNumberToSplit = simpleDateFormat.format(currentTime);
         dataNumberAfterSplit= dataNumberToSplit.split("-",3);
-
         for(int i = 0; i < dataNumberAfterSplit.length; i++)
         {
             generatedUserId += (dataNumberAfterSplit[i]);
@@ -58,17 +58,16 @@ public class AddNewUser extends RegistrationPageActivity
             if(dataNumbersSum <=9) generatedUserId += "0";
         }
         generatedUserId += dataNumbersSum;
-
-        ShowToast.showToast(context,String.valueOf(generatedUserId));
     }
-
+    private void DataTimeGenerated()
+    { dataCurrentTime = simpleDateFormat0.format(currentTime); }
     private void AddNewUserToDataBase()
     {
-        Cursor cursorDataLogin;
-        //cursorDataLogin = database.rawQuery();
-        //cursorDataLogin.moveToFirst();
+        DataTimeGenerated();
+        database.execSQL(" INSERT INTO " + table_name + "( user_id, login, password, data_register ) " +
+                                             "VALUES ("+generatedUserId+ ", '"+dataLogin+ "','" +dataPassword0+ "','" +dataCurrentTime+ "');");
+        ShowToast.showToast(context,"Success registration");
     }
-
     /* Local db connect */
     private void ConnectToDataBase()
     {

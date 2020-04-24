@@ -33,7 +33,7 @@ public class RegistrationPageActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.registration_page);
+        setContentView(R.layout.layout_registration);
     }
     /* Button onclick change layout */
     public void PreviousLayout(View view)
@@ -60,26 +60,23 @@ public class RegistrationPageActivity extends AppCompatActivity
         errorLogEditText.setText(dataErrorText);
         dataErrorText = "";
     }
-    /* Main */
+    /* Main button OnClick */
     public void RegisterDataCheck(View view)
     {
         DataChartersUserCheck DataCheck = new DataChartersUserCheck();
         sqlDataUserCheck DataBaseCheck = new sqlDataUserCheck();
-
+        AddNewUser addNewUser = new AddNewUser();
         InitialisationLayoutComponents();
-        /* Login charters check */
-        DataCheck.LoginChartersCheck();
-        /* Password charters check */
-        DataCheck.PasswordChartersCheck();
-        /* Login sql-data check */
-        DataBaseCheck.DataBaseSqlDataCheck(getApplicationContext());
+        /* Charters check lg + pass */
+        DataCheck.LoginChartersCheck(); /* Login charters check */
+        DataCheck.PasswordChartersCheck(); /* Password charters check */
+        /* Success charters check */
+        if( (DataChartersUserCheck.flagLoginCharterError  | DataChartersUserCheck.flagPasswordCharterError)  == 0 )
+        DataBaseCheck.DataBaseSqlDataCheck(getApplicationContext()); /* Login sql-data check */
         // Show errors (beta)
         ResetErrorLog();
-
-        // Test
-        AddNewUser addNewUser = new AddNewUser();
+        /* Success sql check */
+        if(sqlDataUserCheck.flagSqlLoginError == 0) /* Add new user to db */
         addNewUser.RegisterNewUser(getApplicationContext());
-
-
     }
 }
