@@ -25,32 +25,32 @@ public class sqlDataUserCheck extends RegistrationPageActivity
     private Cursor cursorDataLogin;
     private Cursor cursorRowCount;
 
+    static int flagSqlLoginError = 1;
+
     /* Check login used */
     protected void DataBaseSqlDataCheck(Context context)
     {
         this.context = context;
         ConnectToDataBase();
-
         /* Get rows count */
         cursorRowCount = database.rawQuery(" SELECT * FROM " + tableName, null);
-        columnLength = cursorRowCount.getColumnCount();
-
+        columnLength = cursorRowCount.getCount();
         /* Lg ck (login column - 2) */
-        for( columnId = 0; columnId < columnLength; columnId++ )
+        for( columnId = 1; columnId < columnLength; columnId++ )
         {
-            cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName +" WHERE id= " + columnId , null);
+            cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName +" WHERE id = " + columnId , null);
             cursorDataLogin.moveToFirst();
             dbLoginData = cursorDataLogin.getString(2);
-            if(dataLogin.equals(dbLoginData))
+            if(dataLogin.equals(dbLoginData)) /* Check login used */
             {
                 ShowToast.showToast(context,"Login already used");
+                flagSqlLoginError = 1;
                 break;
-            }
+            } else flagSqlLoginError = 0;
         }
         cursorDataLogin.close();
         cursorRowCount.close();
     }
-
     /* Local db connect */
     private void ConnectToDataBase()
     {
