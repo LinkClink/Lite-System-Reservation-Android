@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenuActivity"></activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name="RegistrationPage.RegistrationPageActivity"
-            android:screenOrientation="nosensor"></activity>
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".MainClassFirstPage"
             android:screenOrientation="nosensor"
