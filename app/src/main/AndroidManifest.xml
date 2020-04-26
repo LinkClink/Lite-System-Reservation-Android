@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainMenuActivity"
+            android:name="MainMenuDrawerPage.MainMenuActivity"
             android:screenOrientation="nosensor"/>
         <activity
             android:name="RegistrationPage.RegistrationPageActivity"
             android:screenOrientation="nosensor"/>
         <activity
-            android:name=".MainClassFirstPage"
+            android:name="LoginRegistrationPage.LoginRegistrationActivity"
             android:screenOrientation="nosensor"
             android:theme="@style/SplashTheme">
             <intent-filter>
