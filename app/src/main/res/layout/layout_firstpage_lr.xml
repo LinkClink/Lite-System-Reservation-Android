@@ -89,6 +89,7 @@
                     android:layout_marginStart="15dp"
                     android:background="@drawable/selector_button_0"
                     android:fontFamily="casual"
+                    android:onClick="LogIn"
                     android:text="@string/but_log_0" />
             </LinearLayout>
         </LinearLayout>
