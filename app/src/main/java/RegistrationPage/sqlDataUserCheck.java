@@ -6,11 +6,11 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.io.IOException;
+
 import SQL.sqlDataBaseConnect;
 import logic.ShowToast;
 
-public class sqlDataUserCheck extends RegistrationPageActivity
-{
+public class sqlDataUserCheck extends RegistrationPageActivity {
     private int columnLength = 1;
     private int columnId;
 
@@ -28,22 +28,19 @@ public class sqlDataUserCheck extends RegistrationPageActivity
     static int flagSqlLoginError = 1;
 
     /* Check login used */
-    protected void DataBaseSqlDataCheck(Context context)
-    {
+    protected void DataBaseSqlDataCheck(Context context) {
         this.context = context;
         ConnectToDataBase();
         /* Get rows count */
         cursorRowCount = database.rawQuery(" SELECT * FROM " + tableName, null);
         columnLength = cursorRowCount.getCount();
         /* Lg ck (login column - 2) */
-        for( columnId = 1; columnId < columnLength; columnId++ )
-        {
-            cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName +" WHERE id = " + columnId , null);
+        for (columnId = 1; columnId < columnLength; columnId++) {
+            cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName + " WHERE id = " + columnId, null);
             cursorDataLogin.moveToFirst();
             dbLoginData = cursorDataLogin.getString(2);
-            if(dataLogin.equals(dbLoginData)) /* Check login used */
-            {
-                ShowToast.showToast(context,"Login already used");
+            if (dataLogin.equals(dbLoginData)) /* Check login used */ {
+                ShowToast.showToast(context, "Login already used");
                 flagSqlLoginError = 1;
                 break;
             } else flagSqlLoginError = 0;
@@ -51,18 +48,20 @@ public class sqlDataUserCheck extends RegistrationPageActivity
         cursorDataLogin.close();
         cursorRowCount.close();
     }
+
     /* Local db connect */
-    private void ConnectToDataBase()
-    {
-        // For DataBase connect
+    private void ConnectToDataBase() {
+        /* For DataBase connect */
         dataBaseHelper = new sqlDataBaseConnect(context);
-        try
-        { dataBaseHelper.updateDataBase(); }
-        catch (IOException mIOException)
-        { ShowToast.showToast(getApplicationContext(),"Unable to update database: error 01"); }
-        try
-        { database = dataBaseHelper.getReadableDatabase(); }
-        catch (SQLException mSQLException)
-        { ShowToast.showToast(getApplicationContext(),"Unable to write database: error 02"); }
+        try {
+            dataBaseHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            ShowToast.showToast(getApplicationContext(), "Unable to update database: error 01");
+        }
+        try {
+            database = dataBaseHelper.getReadableDatabase();
+        } catch (SQLException mSQLException) {
+            ShowToast.showToast(getApplicationContext(), "Unable to write database: error 02");
+        }
     }
 }
