@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dr_menu_new_reservation"
+            android:icon="@drawable/ic_menu_drawer_new_reservation_24dp"
+            android:title="@string/dr_menu_new_reservation" />
+        <item
+            android:id="@+id/dr_menu_my_reservations"
+            android:icon="@drawable/ic_menu_drawer_my_reservations_24dp"
+            android:title="@string/dr_menu_my_reservation" />
+
+        <item android:title="@string/dr_menu_title_0">
+            <menu>
+                <item
+                    android:id="@+id/dr_menu_help"
+                    android:icon="@drawable/ic_menu_drawer_help__24dp"
+                    android:title="@string/dr_menu_help" />
+                <item
+                    android:id="@+id/dr_menu_reset"
+                    android:icon="@drawable/ic_menu_drawer_pass_reset_24dp"
+                    android:title="@string/dr_menu_reset_password" />
+                <item
+                    android:id="@+id/dr_menu_logout"
+                    android:icon="@drawable/ic_menu_draver_logout_24dp"
+                    android:title="@string/dr_menu_logOut" />
+            </menu>
+        </item>
+    </group>
+</menu>

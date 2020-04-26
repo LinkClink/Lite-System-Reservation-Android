@@ -10,20 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="RegistrationPage.RegistrationPageActivity"
-            android:screenOrientation="nosensor"
-            >
-        </activity>
-
+            android:name="MainMenuDrawerPage.MainMenuActivity"
+            android:screenOrientation="nosensor"/>
         <activity
-            android:name=".MainClassFirstPage"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="nosensor">
+            android:name="RegistrationPage.RegistrationPageActivity"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name="LoginRegistrationPage.LoginRegistrationActivity"
+            android:screenOrientation="nosensor"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>

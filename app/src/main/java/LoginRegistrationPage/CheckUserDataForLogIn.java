@@ -1,4 +1,4 @@
-package RegistrationPage;
+package LoginRegistrationPage;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -10,27 +10,32 @@ import java.io.IOException;
 import SQL.sqlDataBaseConnect;
 import logic.ShowToast;
 
-public class sqlDataUserCheck extends RegistrationPageActivity {
-    private int columnLength = 1;
-    private int columnId;
-
-    private String dbLoginData;
+public class CheckUserDataForLogIn extends LoginRegistrationActivity {
+    private Context context;
 
     private sqlDataBaseConnect dataBaseHelper;
     private SQLiteDatabase database;
 
-    private Context context;
-
     private String tableName = "UserData";
+    
     private Cursor cursorDataLogin;
     private Cursor cursorRowCount;
 
-    static int flagSqlLoginError = 1;
+    private int columnLength;
+    private int columnId;
 
-    /* Check login used */
-    protected void DataBaseSqlDataCheck(Context context) {
+    private int flagSqlDataError = 1;
+    private int flagSqlPasswordError = 0;
+
+    protected void MainCheck(Context context) {
         this.context = context;
         ConnectToDataBase();
+
+        if (dataLogin.length() != 0 && dataPassword.length() != 0) // beta ver 1
+            CheckData();
+    }
+
+    private void CheckData() {
         /* Get rows count */
         cursorRowCount = database.rawQuery(" SELECT * FROM " + tableName, null);
         columnLength = cursorRowCount.getCount();
@@ -39,11 +44,20 @@ public class sqlDataUserCheck extends RegistrationPageActivity {
             cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName + " WHERE id = " + columnId, null);
             cursorDataLogin.moveToFirst();
             dbLoginData = cursorDataLogin.getString(2);
-            if (dataLogin.equals(dbLoginData)) /* Check login used */ {
-                ShowToast.showToast(context, "Login already used");
-                flagSqlLoginError = 1;
-                break;
-            } else flagSqlLoginError = 0;
+            System.out.println("Login"+ dbLoginData);
+            if (dataLogin.equals(dbLoginData)) /* Check login */ {
+                dbPasswordData = cursorDataLogin.getString(3);
+                if (dataPassword.equals(dbPasswordData)) /* Check password */ {
+                    flagSqlDataError = 0;
+                    ShowToast.showToast(context, "Success login");
+                    break;
+                } else ShowToast.showToast(context, "Password is incorrect");
+            }
+            else
+            {
+                flagSqlDataError = 1;
+                ShowToast.showToast(context,"Login is incorrect");
+            }
         }
         cursorDataLogin.close();
         cursorRowCount.close();
