@@ -64,7 +64,7 @@ public class AddNewUser extends RegistrationPageActivity {
         DataTimeGenerated();
         database.execSQL(" INSERT INTO " + table_name + "( user_id, login, password, data_register ) " +
                 "VALUES (" + generatedUserId + ", '" + dataLogin + "','" + dataPassword0 + "','" + dataCurrentTime + "');");
-        ShowToast.showToast(context, "Success registration");
+        ShowToast.showToast(context, "Success registration"); /* beta */
     }
 
     /* Local db connect */

@@ -3,8 +3,8 @@ package RegistrationPage;
 public class DataChartersUserCheck extends RegistrationPageActivity {
     SetErrorBackgroundEditText setErrorEd = new SetErrorBackgroundEditText();
 
-    static int flagLoginCharterError = 0;
-    static int flagPasswordCharterError = 0;
+    protected static int flagLoginCharterError = 0;
+    protected static int flagPasswordCharterError = 0;
 
     /* Check (login-data) charters */
     protected void LoginChartersCheck() {
@@ -48,7 +48,7 @@ public class DataChartersUserCheck extends RegistrationPageActivity {
     }
 
     /* Check (a-z) (0-9) (A-Z) (symbols) */
-    protected boolean CheckPasswordDataCyrillic(String data) {
+    protected boolean CheckPasswordDataCyrillic(String data) { /* Symbols */
         data = data.replaceAll("[A-Za-z0-9]", "");
         return data.equals("");
     }
