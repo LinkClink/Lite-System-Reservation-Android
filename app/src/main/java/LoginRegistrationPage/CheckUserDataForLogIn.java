@@ -11,27 +11,34 @@ import SQL.sqlDataBaseConnect;
 import logic.ShowToast;
 
 public class CheckUserDataForLogIn extends LoginRegistrationActivity {
+
+    private SetErrorBackgroundEditText setError = new SetErrorBackgroundEditText();
     private Context context;
 
     private sqlDataBaseConnect dataBaseHelper;
     private SQLiteDatabase database;
 
     private String tableName = "UserData";
-    
+    private String dataError = "";
+
     private Cursor cursorDataLogin;
     private Cursor cursorRowCount;
 
     private int columnLength;
     private int columnId;
 
-    private int flagSqlDataError = 1;
-    private int flagSqlPasswordError = 0;
+    protected static int flagSqlDataError = 1;
+
+    private int flagCheckEmpty0 = 1;
+    private int flagCheckEmpty1 = 1;
 
     protected void MainCheck(Context context) {
         this.context = context;
         ConnectToDataBase();
+        CheckEmptyEditText();
+        SetErrorLog();
 
-        if (dataLogin.length() != 0 && dataPassword.length() != 0) // beta ver 1
+        if (flagCheckEmpty0 != 1 && flagCheckEmpty1 != 1) // beta ver 1
             CheckData();
     }
 
@@ -39,24 +46,26 @@ public class CheckUserDataForLogIn extends LoginRegistrationActivity {
         /* Get rows count */
         cursorRowCount = database.rawQuery(" SELECT * FROM " + tableName, null);
         columnLength = cursorRowCount.getCount();
+
         /* Lg ck (login column - 2) */
         for (columnId = 1; columnId < columnLength; columnId++) {
             cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName + " WHERE id = " + columnId, null);
             cursorDataLogin.moveToFirst();
             dbLoginData = cursorDataLogin.getString(2);
-            System.out.println("Login"+ dbLoginData);
+
             if (dataLogin.equals(dbLoginData)) /* Check login */ {
                 dbPasswordData = cursorDataLogin.getString(3);
                 if (dataPassword.equals(dbPasswordData)) /* Check password */ {
                     flagSqlDataError = 0;
-                    ShowToast.showToast(context, "Success login");
                     break;
-                } else ShowToast.showToast(context, "Password is incorrect");
-            }
-            else
-            {
+                } else {
+                    ShowToast.showToast(context, "Password is incorrect");
+                    break;
+                }
+            } else {
                 flagSqlDataError = 1;
-                ShowToast.showToast(context,"Login is incorrect");
+                ShowToast.showToast(context, "Login is incorrect");
+                break;
             }
         }
         cursorDataLogin.close();
@@ -77,5 +86,31 @@ public class CheckUserDataForLogIn extends LoginRegistrationActivity {
         } catch (SQLException mSQLException) {
             ShowToast.showToast(getApplicationContext(), "Unable to write database: error 02");
         }
+    }
+
+    private void CheckEmptyEditText() {
+        /* Login */
+        if (dataLogin.length() == 0) {
+            setError.SetLoginError();
+            flagCheckEmpty0 = 1;
+            dataError += "* Login must not be Empty\n";
+        } else {
+            setError.ResetLoginError();
+            flagCheckEmpty0 = 0;
+        }
+        /* Password */
+        if (dataPassword.length() == 0) {
+            setError.SetPasswordError();
+            flagCheckEmpty1 = 1;
+            dataError += "* Password must not be Empty\n";
+        } else {
+            setError.ResetPasswordError();
+            flagCheckEmpty1 = 0;
+        }
+    }
+
+    private void SetErrorLog() {
+        errorLogTextView.setText(dataError);
+        dataError = "";
     }
 }
