@@ -35,7 +35,7 @@ public class LoginRegistrationActivity extends AppCompatActivity {
     public void RegistrationLayout(View view) {
         Intent intent_reg = new Intent(LoginRegistrationActivity.this, RegistrationPageActivity.class);
         startActivityForResult(intent_reg, 1);
-        overridePendingTransition(R.anim.layout_no_an, R.anim.layout_no_an);
+        overridePendingTransition(R.anim.animation_beetwen_layout_no_mow, R.anim.animation_beetwen_layout_no_mow);
     }
 
     private void InitialisationComponents() {
@@ -54,7 +54,5 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         checkUser.MainCheck(getApplicationContext());
         if(CheckUserDataForLogIn.flagSqlDataError != 1)
             ShowToast.showToast(getApplicationContext(),"Success login");
-
-
     }
 }

@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowAnimationStyle">@anim/layout_no_an</item>
+        <item name="android:windowAnimationStyle">@anim/animation_beetwen_layout_no_mow</item>
         /* Set standart layout animation */
     </style>
 
