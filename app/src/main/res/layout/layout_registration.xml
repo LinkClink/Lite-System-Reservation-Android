@@ -36,7 +36,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:contentDescription="@string/image_name_0"
-                app:srcCompat="@drawable/splash_screenlogo" />
+                app:srcCompat="@drawable/splash_screen_logo" />
 
             <EditText
                 android:id="@+id/editText_login_registration"
@@ -84,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="7dp"
                 android:orientation="horizontal">
 
                 <Button
