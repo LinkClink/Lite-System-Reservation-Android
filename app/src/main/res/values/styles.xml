@@ -36,5 +36,12 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
     </style>
 
+    <style name="NavigationView" parent="@style/AppTheme">
+        <item name="android:fontFamily">casual</item>
+    </style>
+    
+    
+    
+
 </resources>
 
