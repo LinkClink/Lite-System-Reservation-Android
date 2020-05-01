@@ -15,13 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegistrationPageActivity extends AppCompatActivity {
     private TextView errorLogEditText;
 
-    static EditText passwordEditText0;
-    static EditText passwordEditText1;
-    static EditText loginEditText0;
+    protected static EditText passwordEditText0;
+    protected static EditText passwordEditText1;
+    protected static EditText loginEditText0;
 
-    static String dataPassword0;
-    static String dataPassword1;
-    static String dataLogin;
+    protected static String dataPassword0;
+    protected static String dataPassword1;
+    protected static String dataLogin;
 
     static String dataErrorText = "";
 
@@ -38,7 +38,7 @@ public class RegistrationPageActivity extends AppCompatActivity {
     public void PreviousLayout(View view) {
         Intent intent_reg = new Intent(RegistrationPageActivity.this, LoginRegistrationActivity.class);
         startActivityForResult(intent_reg, 1);
-        overridePendingTransition(R.anim.layout_no_an, R.anim.layout_no_an);
+        overridePendingTransition(R.anim.animation_between_layout_no_mow, R.anim.animation_between_layout_no_mow);
     }
 
     /* Component Initialisation */
@@ -47,7 +47,6 @@ public class RegistrationPageActivity extends AppCompatActivity {
         passwordEditText0 = (EditText) findViewById(R.id.editText_pass1_registration);
         passwordEditText1 = (EditText) findViewById(R.id.editText_pass2_registration);
         errorLogEditText = (TextView) findViewById(R.id.textView_error);
-
         dataLogin = loginEditText0.getText().toString();
         dataPassword0 = passwordEditText0.getText().toString();
         dataPassword1 = passwordEditText1.getText().toString();
