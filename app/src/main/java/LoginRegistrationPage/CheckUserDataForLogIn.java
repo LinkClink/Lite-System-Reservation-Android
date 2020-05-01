@@ -52,7 +52,6 @@ public class CheckUserDataForLogIn extends LoginRegistrationActivity {
             cursorDataLogin = database.rawQuery(" SELECT * FROM " + tableName + " WHERE id = " + columnId, null);
             cursorDataLogin.moveToFirst();
             dbLoginData = cursorDataLogin.getString(2);
-
             if (dataLogin.equals(dbLoginData)) /* Check login */ {
                 dbPasswordData = cursorDataLogin.getString(3);
                 if (dataPassword.equals(dbPasswordData)) /* Check password */ {
@@ -65,7 +64,6 @@ public class CheckUserDataForLogIn extends LoginRegistrationActivity {
             } else {
                 flagSqlDataError = 1;
                 ShowToast.showToast(context, "Login is incorrect");
-                break;
             }
         }
         cursorDataLogin.close();
