@@ -36,12 +36,25 @@
                 android:contentDescription="@string/image_name_0"
                 app:srcCompat="@drawable/splash_screenlogo" />
 
+            <Switch
+                android:id="@+id/switch_save_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:checked="true"
+                android:fontFamily="casual"
+                android:text="@string/switch_auto_text"
+                android:textOff="@string/switch_auto_off"
+                android:textOn="@string/switch_auto_on"
+                android:showText="true"
+                android:theme="@style/SwitchAuto" />
+
             <EditText
                 android:id="@+id/editText_login_firstpage"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="3dp"
                 android:autofillHints=""
                 android:background="@drawable/selector_edittext_0"
                 android:backgroundTintMode="src_over"
@@ -53,9 +66,10 @@
 
             <EditText
                 android:id="@+id/editText_pass_firstpage"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
+                android:layout_margin="3dp"
                 android:autofillHints=""
                 android:background="@drawable/selector_edittext_0"
                 android:ems="13"
@@ -68,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_margin="7dp"
                 android:orientation="horizontal">
 
                 <Button
