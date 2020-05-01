@@ -38,7 +38,7 @@ public class RegistrationPageActivity extends AppCompatActivity {
     public void PreviousLayout(View view) {
         Intent intent_reg = new Intent(RegistrationPageActivity.this, LoginRegistrationActivity.class);
         startActivityForResult(intent_reg, 1);
-        overridePendingTransition(R.anim.animation_beetwen_layout_no_mow, R.anim.animation_beetwen_layout_no_mow);
+        overridePendingTransition(R.anim.animation_between_layout_no_mow, R.anim.animation_between_layout_no_mow);
     }
 
     /* Component Initialisation */
