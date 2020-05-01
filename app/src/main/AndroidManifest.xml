@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="MainMenuDrawerPage.MainMenuActivity"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor"
+            android:label=""
+            />
         <activity
             android:name="RegistrationPage.RegistrationPageActivity"
             android:screenOrientation="nosensor"/>
