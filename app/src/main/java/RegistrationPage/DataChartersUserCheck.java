@@ -26,6 +26,7 @@ public class DataChartersUserCheck extends RegistrationPageActivity {
         flagPasswordCharterError = 0;
         if (!dataPassword0.equals(dataPassword1)) /* Second password is incorrect */ {
             dataErrorText += "* password mismatch\n";
+            flagPasswordCharterError = 1;
             setErrorEd.SetPassword1Error();
         } else setErrorEd.ResetPassword1Error();
 
