@@ -8,4 +8,14 @@
     <color name="colorTextViewPressed">#00BCD4</color>
     <color name="colorTextViewDefault">#040404</color>
 
+    <!-- Toolbar -->
+    <color name="colorToolBarBackground">#FFFFFF</color>
+    <color name="colorToolBarText">#000000</color>
+
+    <!-- Switch -->
+    <color name="colorSwitchDefault">#00BCD4</color>
+    <color name="colorSwitchEnabled">#D40000</color>
+    <color name="colorSwitchChecked">#040404</color>
+    <color name="colorSwitchDisabled">#028C9E</color>
+
 </resources>
