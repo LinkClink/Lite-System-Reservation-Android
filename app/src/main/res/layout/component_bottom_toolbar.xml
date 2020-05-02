@@ -18,7 +18,7 @@
             android:fontFamily="casual"
             android:gravity="bottom"
             android:textColor="#F44336"
-            android:textSize="12sp" />
+            android:textSize="@dimen/textSizeTextViewBottomError0" />
 
     </ScrollView>
 
@@ -42,33 +42,35 @@
             android:gravity="center"
             android:text="@string/textview_help"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="17sp" />
+            android:textSize="@dimen/textSizeTextViewBottom0" />
 
         <TextView
-            android:id="@+id/textView_"
+            android:id="@+id/textView_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="onClickFeedBack"
             android:fontFamily="casual"
             android:gravity="center"
             android:text="@string/textview_feedback"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="17sp" />
+            android:textSize="@dimen/textSizeTextViewBottom0" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/textView_site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="onClickSite"
             android:fontFamily="casual"
             android:gravity="center"
             android:text="@string/textview_site"
             android:textColor="@drawable/selector_textview_0"
-            android:textSize="17sp" />
+            android:textSize="@dimen/textSizeTextViewBottom0" />
     </LinearLayout>
 
 </LinearLayout>

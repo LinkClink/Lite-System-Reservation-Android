@@ -31,8 +31,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dimenImageViewLogoWeight0"
+                android:layout_height="@dimen/dimenImageViewLogoHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:contentDescription="@string/image_name_0"
@@ -41,7 +41,7 @@
             <EditText
                 android:id="@+id/editText_login_registration"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimenEditTextHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:autofillHints="no"
@@ -55,7 +55,7 @@
             <EditText
                 android:id="@+id/editText_pass1_registration"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimenEditTextHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:autofillHints="no"
@@ -69,7 +69,7 @@
             <EditText
                 android:id="@+id/editText_pass2_registration"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimenEditTextHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:autofillHints="no"
@@ -107,8 +107,13 @@
                     android:fontFamily="casual"
                     android:onClick="RegisterDataCheck"
                     android:text="@string/but_reg_0" />
+
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
+
     <include layout="@layout/component_bottom_toolbar"/>
+
 </RelativeLayout>
