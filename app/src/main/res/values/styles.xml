@@ -15,6 +15,7 @@
         <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>
 
+    <!-- WithOut action bar -->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -36,12 +37,10 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
     </style>
 
+    <!-- Navigation view -->
     <style name="NavigationView" parent="@style/AppTheme">
         <item name="android:fontFamily">casual</item>
     </style>
-    
-    
-    
 
 </resources>
 
