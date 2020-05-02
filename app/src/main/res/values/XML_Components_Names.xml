@@ -39,6 +39,14 @@
     <!-- Toolbar -->
     <string name="toolbar_title">Main menu</string>
 
+    <!-- Dialog feedback -->
+    <string name="textview_opinion">Opinion</string>
+    <string name="editText_name">Name</string>
+    <string name="editText_email_1">Email</string>
+    <string name="editText_text">Text</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_send">Send</string>
+
 </resources>
 
 
