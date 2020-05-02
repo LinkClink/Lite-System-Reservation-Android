@@ -14,7 +14,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private DrawerLayout drawer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);

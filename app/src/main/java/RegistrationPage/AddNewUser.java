@@ -13,8 +13,10 @@ import SQL.sqlDataBaseConnect;
 import logic.ShowToast;
 
 public class AddNewUser extends RegistrationPageActivity {
+
     private Random randomNumber = new Random();
     private Date currentTime = new Date();
+
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yy"); /* Year day mouth */
     private SimpleDateFormat simpleDateFormat0 = new SimpleDateFormat("MM-dd-yyyy"); /* Year day mouth */
 

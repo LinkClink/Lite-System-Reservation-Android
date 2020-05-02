@@ -3,6 +3,7 @@ package RegistrationPage;
 import com.linkclink.LSR.R;
 
 public class SetErrorBackgroundEditText extends RegistrationPageActivity {
+
     /* Set EditText drawable for visible errors */
     protected void SetLoginError() {
         loginEditText0.setBackgroundResource(R.drawable.shape_edittext_error);
