@@ -1,6 +1,9 @@
 package LoginRegistrationPage;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,9 +16,11 @@ import com.linkclink.LSR.R;
 import MainMenuDrawerPage.MainMenuActivity;
 import RegistrationPage.RegistrationPageActivity;
 import androidx.appcompat.app.AppCompatActivity;
+import logic.GoToSite;
 import logic.ShowToast;
 
 public class LoginRegistrationActivity extends AppCompatActivity {
+
     protected static EditText loginEditText;
     protected static EditText passwordEditText;
 
@@ -27,7 +32,6 @@ public class LoginRegistrationActivity extends AppCompatActivity {
     protected static String dataPassword;
     protected static String dbLoginData;
     protected static String dbPasswordData;
-
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -67,6 +71,24 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         Intent intent_main = new Intent(LoginRegistrationActivity.this, MainMenuActivity.class);
         startActivityForResult(intent_main, 1);
         overridePendingTransition(R.anim.animation_between_layout_no_mow, R.anim.animation_between_layout_no_mow);
+    }
+
+    public void onClickSite(View view)
+    { GoToSite goToSite = new GoToSite(); goToSite.OpenSite(getApplicationContext()); }
+
+    public void onClickFeedBack(View view)
+    {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(LoginRegistrationActivity.this);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_feedback,null);
+
+
+        alert.setView(mView);
+        final AlertDialog alertDialog = alert.create();
+
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.setCanceledOnTouchOutside(false);
+
+        alertDialog.show();
     }
 
 

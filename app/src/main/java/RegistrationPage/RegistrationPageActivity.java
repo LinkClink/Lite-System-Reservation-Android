@@ -11,8 +11,10 @@ import com.linkclink.LSR.R;
 
 import LoginRegistrationPage.LoginRegistrationActivity;
 import androidx.appcompat.app.AppCompatActivity;
+import logic.GoToSite;
 
 public class RegistrationPageActivity extends AppCompatActivity {
+
     private TextView errorLogEditText;
 
     protected static EditText passwordEditText0;
@@ -57,6 +59,9 @@ public class RegistrationPageActivity extends AppCompatActivity {
         errorLogEditText.setText(dataErrorText);
         dataErrorText = "";
     }
+
+    public void onClickSite(View view)
+    { GoToSite goToSite = new GoToSite(); goToSite.OpenSite(getApplicationContext()); }
 
     /* Main button OnClick */
     public void RegisterDataCheck(View view) {

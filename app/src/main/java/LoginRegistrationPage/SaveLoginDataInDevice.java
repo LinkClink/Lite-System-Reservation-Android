@@ -26,5 +26,4 @@ public class SaveLoginDataInDevice extends LoginRegistrationActivity {
         loginEditText.setText(userData.getString("login", ""));
         passwordEditText.setText(userData.getString("password", ""));
     }
-
 }

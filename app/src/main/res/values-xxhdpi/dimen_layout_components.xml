@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main layouts -->
+    <dimen name="dimenEditTextHeight0">50dp</dimen>
+
+    <dimen name="dimenImageViewLogoHeight0">125dp</dimen>
+    <dimen name="dimenImageViewLogoWeight0">125dp</dimen>
+
+    <!-- Bottom toolbar -->
+    <dimen name="textSizeTextViewBottom0">17sp</dimen>
+    <dimen name="textSizeTextViewBottomError0">12sp</dimen>
+
+    <!-- Dialog feedback -->
+    <dimen name="dimenEditTextHeight1">45dp</dimen>
+
+
+</resources>

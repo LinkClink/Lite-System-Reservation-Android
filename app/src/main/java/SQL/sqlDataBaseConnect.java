@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-// Connecting to the database (daytime collection methods)
+/* Connecting to the database (daytime collection methods) */
 public class sqlDataBaseConnect extends SQLiteOpenHelper {
     // Name of DataBase for Items
     private static String DB_NAME = "Users.db";
     private static String DB_PATH = "";
 
-    // Versions DB (first ver 1)
+    /* Versions DB (first ver 1) */
     private static final int DB_VERSION = 8;
 
     private SQLiteDatabase mDataBase;

@@ -1,6 +1,7 @@
 package RegistrationPage;
 
 public class DataChartersUserCheck extends RegistrationPageActivity {
+
     SetErrorBackgroundEditText setErrorEd = new SetErrorBackgroundEditText();
 
     protected static int flagLoginCharterError = 0;

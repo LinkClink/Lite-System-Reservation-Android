@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -29,8 +30,8 @@
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dimenImageViewLogoWeight0"
+                android:layout_height="@dimen/dimenImageViewLogoHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:contentDescription="@string/image_name_0"
@@ -52,7 +53,7 @@
             <EditText
                 android:id="@+id/editText_login_firstpage"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimenEditTextHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:autofillHints=""
@@ -67,7 +68,7 @@
             <EditText
                 android:id="@+id/editText_pass_firstpage"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dimenEditTextHeight0"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:autofillHints=""
@@ -105,8 +106,13 @@
                     android:fontFamily="casual"
                     android:onClick="LogIn"
                     android:text="@string/but_log_0" />
+
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
+
     <include layout="@layout/component_bottom_toolbar" />
+
 </RelativeLayout>

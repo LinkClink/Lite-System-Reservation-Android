@@ -11,6 +11,7 @@ import SQL.sqlDataBaseConnect;
 import logic.ShowToast;
 
 public class sqlDataUserCheck extends RegistrationPageActivity {
+
     private int columnLength = 1;
     private int columnId;
 
