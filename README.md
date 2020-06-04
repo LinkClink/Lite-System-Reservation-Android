@@ -8,7 +8,7 @@
 
 # Getting Started:
 * You can open this project in your Android Studio also download **release.apk** and install on your smartphone.
-* Also download app [Download](https://drive.google.com/file/d/10Gu9Dr6sCXDcqp_7zFLCf18SA-Bzq5S4/view?usp=sharing)
+* Also download app [Download](https://drive.google.com/file/d/1tzznkFtvgKKe-UFmtFpEvBMVHVyvD-8x/view?usp=sharing)
 
 # Prerequisites:
 * Android Studio [Download](https://developer.android.com/studio)
