@@ -25,11 +25,3 @@
 # Authors:
 - Yevhenii Andrushchenko (LinkClink)
 - Acknowledgments Hat tip to anyone whose code was used Inspiration etc...
-
-
-**Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc**
-
-
