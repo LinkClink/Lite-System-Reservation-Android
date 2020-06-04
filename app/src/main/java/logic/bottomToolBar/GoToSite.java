@@ -1,4 +1,4 @@
-package logic;
+package logic.bottomToolBar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,13 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class GoToSite extends AppCompatActivity {
 
-    private Context context;
-
     private String url;
 
     /* Open program site in GitHub default: https://github.com/LinkClink/Reservation-System-LSR-Android-WEB-API */
     public void OpenSite(Context context) {
-        this.context = context;
 
         url = context.getResources().getString(R.string.AppSiteGitHub);
         Uri uri = Uri.parse(url);
