@@ -1,13 +1,14 @@
 
 # Project Title:
-System for reservation places and cheked their.
+* System Reservation LSR
 
 # Idea:
  <img src="https://sun9-28.userapi.com/mRRG6Aes2DbUUdLR00OwamxH5uiIj3aap0wzVg/np4pZshc7g8.jpg" width="1000">
 
 
 # Getting Started:
-You can open this project in your Android Studio also download **release.apk** and install on your smartphone.
+* You can open this project in your Android Studio also download **release.apk** and install on your smartphone.
+* Also download app [Download](https://drive.google.com/file/d/10Gu9Dr6sCXDcqp_7zFLCf18SA-Bzq5S4/view?usp=sharing)
 
 # Prerequisites:
 * Android Studio [Download](https://developer.android.com/studio)
@@ -23,6 +24,7 @@ You can open this project in your Android Studio also download **release.apk** a
 
 # Authors:
 - Yevhenii Andrushchenko (LinkClink)
+- Acknowledgments Hat tip to anyone whose code was used Inspiration etc...
 
 
 **Acknowledgments
