@@ -13,6 +13,7 @@
 
     <!-- Dialog feedback -->
     <dimen name="dimenEditTextHeight1">45dp</dimen>
+    <dimen name="dimenEditTextHeight2">300dp</dimen>
 
 
 </resources>
