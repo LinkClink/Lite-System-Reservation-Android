@@ -1,9 +1,6 @@
 package LoginRegistrationPage;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,7 +13,8 @@ import com.linkclink.LSR.R;
 import MainMenuDrawerPage.MainMenuActivity;
 import RegistrationPage.RegistrationPageActivity;
 import androidx.appcompat.app.AppCompatActivity;
-import logic.GoToSite;
+import logic.bottomToolBar.FeedBack;
+import logic.bottomToolBar.GoToSite;
 import logic.ShowToast;
 
 public class LoginRegistrationActivity extends AppCompatActivity {
@@ -76,21 +74,9 @@ public class LoginRegistrationActivity extends AppCompatActivity {
     public void onClickSite(View view)
     { GoToSite goToSite = new GoToSite(); goToSite.OpenSite(getApplicationContext()); }
 
+
     public void onClickFeedBack(View view)
-    {
-        final AlertDialog.Builder alert = new AlertDialog.Builder(LoginRegistrationActivity.this);
-        View mView = getLayoutInflater().inflate(R.layout.dialog_feedback,null);
-
-
-        alert.setView(mView);
-        final AlertDialog alertDialog = alert.create();
-
-        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        alertDialog.setCanceledOnTouchOutside(false);
-
-        alertDialog.show();
-    }
-
+    { FeedBack feedBack = new FeedBack(); feedBack.OpenFeedBackDialog(getApplicationContext()); }
 
     public void LogIn(View view) {
         CheckUserDataForLogIn checkUser = new CheckUserDataForLogIn();
@@ -101,6 +87,7 @@ public class LoginRegistrationActivity extends AppCompatActivity {
 
         /* Check data */
         checkUser.MainCheck(getApplicationContext());
+
         /* If login data is correct */
         if (CheckUserDataForLogIn.flagSqlDataError != 1) {
             if (autoSwitch.isChecked()) saveData.SaveUserLoginData(getApplicationContext());

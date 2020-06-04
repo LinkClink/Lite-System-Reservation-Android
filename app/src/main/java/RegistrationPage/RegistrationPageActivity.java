@@ -11,7 +11,7 @@ import com.linkclink.LSR.R;
 
 import LoginRegistrationPage.LoginRegistrationActivity;
 import androidx.appcompat.app.AppCompatActivity;
-import logic.GoToSite;
+import logic.bottomToolBar.GoToSite;
 
 public class RegistrationPageActivity extends AppCompatActivity {
 
@@ -55,13 +55,15 @@ public class RegistrationPageActivity extends AppCompatActivity {
     }
 
     /* Set data error */
-    private void ResetErrorLog() {
-        errorLogEditText.setText(dataErrorText);
-        dataErrorText = "";
-    }
+    private void ResetErrorLog()
+    { errorLogEditText.setText(dataErrorText); dataErrorText = ""; }
 
     public void onClickSite(View view)
     { GoToSite goToSite = new GoToSite(); goToSite.OpenSite(getApplicationContext()); }
+
+     /*
+     public void onClickFeedBack(View view)
+     { FeedBack feedBack = new FeedBack(); feedBack.OpenFeedBackDialog(getApplicationContext()); } */
 
     /* Main button OnClick */
     public void RegisterDataCheck(View view) {
